@@ -1,0 +1,13 @@
+<div>
+    <p>Bienvenido a la galería, selecciona una raza de gato para ver una imagen</p>
+    <div class="select">
+        <select (change)="seleccionaGato($event.target.value)">
+            <option [value]="0">Escoge una raza</option>
+            <option [value]="breed.id" *ngFor="let breed of listaGatos">{{breed.name}}</option>
+        </select>
+    </div>
+
+    <div *ngIf="urlImagen" class="img">
+        <img src="{{urlImagen}}" width="400px" />
+    </div>
+</div>
